@@ -1,4 +1,5 @@
 import React from 'react';
+import Google from './google/google';
 import {Provider} from 'react-redux';
 import createStore from '../lib/store';
 import Dashboard from './dashboard/dashboard';
@@ -16,7 +17,10 @@ class App extends React.Component {
       <main className='main-content'>
         <Provider store={store}>
           <BrowserRouter>
-            <Route exact path='/' component={Dashboard}/>
+            <section>
+              <Route exact path='/' component={Dashboard}/>
+              <Route exact path='/oauth/google/code' component={Google}/>
+            </section>
           </BrowserRouter>
         </Provider>
       </main>
